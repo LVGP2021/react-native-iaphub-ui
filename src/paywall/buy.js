@@ -44,7 +44,6 @@ class Buy extends React.Component {
 					<View style={styles.button}>
 						{!isBuyLoading && <Text style={styles.text}>{buttonText}</Text>}
 						{!isBuyLoading && <Text style={styles.subtitleText}>{buttonSubtitleText}</Text>}
-
 						{isBuyLoading && <ActivityIndicator size="small" color={activityIndicatorColor} />}
 					</View>
 				</Ripple>
