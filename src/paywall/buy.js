@@ -14,7 +14,9 @@ class Buy extends React.Component {
     var {styles, onBuy, onShowManageSubscriptions, isBuyLoading, lang, i18n, selectedProduct, selectedActiveProductIndex, activeProducts, activityIndicatorColor} = this.props;
 		if (!selectedProduct) return null;
 		var translate = buildTranslate('Buy', lang, i18n);
-		var buttonText = translate('continue');
+		// var buttonText = translate('continue');
+		var buttonText = 'Subscribe'
+		var buttonSubtitleText = '7-day free trial. then $7.99 a year.'
 		var onPress = onBuy;
 		var hideButton = false;
 
@@ -41,6 +43,8 @@ class Buy extends React.Component {
 				<Ripple onPress={() => onPress && onPress(selectedProduct)}>
 					<View style={styles.button}>
 						{!isBuyLoading && <Text style={styles.text}>{buttonText}</Text>}
+						{!isBuyLoading && <Text style={styles.subtitleText}>{buttonSubtitleText}</Text>}
+
 						{isBuyLoading && <ActivityIndicator size="small" color={activityIndicatorColor} />}
 					</View>
 				</Ripple>
@@ -58,7 +62,8 @@ const styles = StyleSheet.create({
 	},
 	button: {
 		margin: 10,
-    padding: 10,
+    	padding: 10,
+		minHeight: 70,
 		borderRadius: 40,
 		backgroundColor: '#0294FF',
 		alignItems: 'center',
@@ -76,6 +81,13 @@ const styles = StyleSheet.create({
     })
 	},
 	text: {
+		fontSize: 18,
+		color: 'white',
+		textTransform: 'uppercase'
+	},
+	subtitleText: {
+		margin: 5,
+		fontFamily: 'Effra-Regular',
 		fontSize: 16,
 		color: 'white',
 		textTransform: 'uppercase'
