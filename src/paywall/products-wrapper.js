@@ -23,7 +23,7 @@ class ProductsWrapper extends React.Component {
 
     return (
       <View style={styles.root}>
-				{this.renderProducts()}
+				//{this.renderProducts()}
       </View>
     );
   }
