@@ -23,6 +23,14 @@ class SubscriptionTerms extends React.Component {
 
     return (
 			<View style={styles.root}>
+        <View style={styles.featuresView}>
+          <Text style={styles.title}>WHAT IS INCLUDED</Text>
+          <Text style={styles.text}>✓ Unlock the full Step® experience</Text>
+          <Text style={styles.text}>✓ Support for swimming, floors climbed and more coming soon</Text>
+          <Text style={styles.text}>✓ Social network sharing feature</Text>
+          <Text style={styles.text}>✓ Early access to major updates</Text>
+        </View>
+
 				{(title && title != "") && <Text style={styles.title}>{title}</Text>}
         {(description && description != "") && <Text style={styles.description}>{description}</Text>}
 			</View>
@@ -38,9 +46,16 @@ const styles = StyleSheet.create({
     marginTop: 5
 	},
   title: {
-    fontSize: 13,
-    fontWeight: 'bold',
+    fontSize: 24,
+    fontFamily: 'Effra-Bold',
     color: 'white',
+    marginBottom: 2,
+    textAlign: 'center'
+  },
+  text: {
+    fontSize: 19,
+    fontFamily: 'Effra-Regular',
+    color: 'black',
     marginBottom: 2,
     textAlign: 'center'
   },
@@ -48,6 +63,9 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: 'white',
     textAlign: 'center'
+  },
+  featuresView: {
+    padding: 45
   }
 });
 
